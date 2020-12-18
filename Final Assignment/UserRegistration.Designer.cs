@@ -75,7 +75,7 @@
             this.groupBox1.Controls.Add(this.textBox1);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.groupBox1.ForeColor = System.Drawing.SystemColors.Window;
             this.groupBox1.Location = new System.Drawing.Point(24, 12);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(486, 621);
@@ -303,6 +303,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(524, 655);
             this.Controls.Add(this.groupBox1);
+            this.ForeColor = System.Drawing.SystemColors.Desktop;
             this.Name = "UserRegistration";
             this.Text = "UserRegistration";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.UserRegistration_FormClosing);
