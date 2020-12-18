@@ -247,7 +247,7 @@
             this.label8.Cursor = System.Windows.Forms.Cursors.No;
             this.label8.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.label8.Location = new System.Drawing.Point(65, 441);
+            this.label8.Location = new System.Drawing.Point(74, 441);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(159, 32);
             this.label8.TabIndex = 15;
@@ -305,6 +305,7 @@
             this.Controls.Add(this.groupBox1);
             this.ForeColor = System.Drawing.SystemColors.Desktop;
             this.Name = "UserRegistration";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "UserRegistration";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.UserRegistration_FormClosing);
             this.groupBox1.ResumeLayout(false);
