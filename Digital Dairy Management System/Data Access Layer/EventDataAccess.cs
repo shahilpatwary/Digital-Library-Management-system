@@ -42,5 +42,23 @@ namespace Digital_Dairy_Management_System.Data_Access_Layer
             return Event;
         }
 
+        public int InsertEvent(Event Event)
+        {
+            string sql="INSERT INTO Events(EventName) VALUES('"+Event.EventName+"')";
+            int result = this.dataAccess.ExecuteQuery(sql);
+            return result;
+        }
+        public int UpdateEvent(Event Event)
+        {
+            string sql = "UPDATE Events SET EventName='" + Event.EventName + "' WHERE EventId='" + Event.EventId + "'";
+            int result = this.dataAccess.ExecuteQuery(sql);
+            return result;
+        }
+        public int DeleteEvent(int id)
+        {
+            string sql = "DELETE FROM Event WHERE EventId="+id;
+            int result = this.dataAccess.ExecuteQuery(sql);
+            return result;
+        }
     }
 }
