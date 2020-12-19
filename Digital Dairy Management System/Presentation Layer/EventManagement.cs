@@ -43,6 +43,8 @@ namespace Digital_Dairy_Management_System.Presentation_Layer
         {
             EventService eventService = new EventService();
             LoadEventdataGridView1.DataSource = eventService.GetEventList();
+            eventService = new EventService();
+            EventWiseSearchcomboBox1.DataSource = eventService.GetEventNameList();
         }
         private void ClearInputFields()
         {
