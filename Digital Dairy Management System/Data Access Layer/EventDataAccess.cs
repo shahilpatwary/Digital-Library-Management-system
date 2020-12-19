@@ -60,5 +60,17 @@ namespace Digital_Dairy_Management_System.Data_Access_Layer
             int result = this.dataAccess.ExecuteQuery(sql);
             return result;
         }
+
+        public List<string> GetAllEventName()
+        {
+            string sql = "SELECT * FROM Events";
+            SqlDataReader reader = this.dataAccess.GetData(sql);
+            List<string> events = new List<string>();
+            while (reader.Read())
+            {
+                events.Add(reader["EventName"].ToString());
+            }
+            return events;
+        }
     }
 }

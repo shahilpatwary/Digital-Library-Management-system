@@ -48,8 +48,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Business Layer\EventService.cs" />
+    <Compile Include="Business Layer\NoteService.cs" />
     <Compile Include="Data Access Layer\DataAccess.cs" />
     <Compile Include="Data Access Layer\EventDataAccess.cs" />
+    <Compile Include="Data Access Layer\NoteDataAccess.cs" />
     <Compile Include="Entites\Event.cs" />
     <Compile Include="Entites\Note.cs" />
     <Compile Include="Presentation Layer\EventManagement.cs">

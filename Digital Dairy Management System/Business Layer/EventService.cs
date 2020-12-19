@@ -42,5 +42,10 @@ namespace Digital_Dairy_Management_System.Business_Layer
         {
             return this.EventDataAccess.DeleteEvent(id);
         }
+
+        public List<string> GetEventNameList()
+        {
+            return this.EventDataAccess.GetAllEventName();
+        }
     }
 }
