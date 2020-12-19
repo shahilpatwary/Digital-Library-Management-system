@@ -72,5 +72,30 @@ namespace Digital_Dairy_Management_System.Data_Access_Layer
             }
             return events;
         }
+
+        public List<Note> GetNotesByEvent(string eventName)
+        {
+            string eventIdSearchSql = "SELECT * FROM Events WHERE EventName='" + eventName + "'";
+            SqlDataReader reader = this.dataAccess.GetData(eventIdSearchSql);
+            reader.Read();
+            int eventId = (int)reader["EventId"];
+            string sql = "SELECT * FROM Ntes WHERE EvenrId=" + eventId;
+            dataAccess = new DataAccess();
+            reader = dataAccess.GetData(sql);
+            List<Note> notes = new List<Note>();
+            while(reader.Read())
+            {
+                Note note = new Note();
+                note.NoteId = (int)reader["NoteId"];
+                note.NoteName = reader["NoteName"].ToString();
+                note.Title = reader["Title"].ToString();
+                note.Date = reader["Date"].ToString();
+                note.Importance = reader["Importance"].ToString();
+                note.Description = reader["Description"].ToString();
+                note.EventId = (int)reader["EventId"];
+                notes.Add(note);
+            }
+            return notes;
+        }
     }
 }

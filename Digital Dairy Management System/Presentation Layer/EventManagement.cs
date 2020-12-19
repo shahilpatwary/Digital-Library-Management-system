@@ -104,5 +104,16 @@ namespace Digital_Dairy_Management_System.Presentation_Layer
             }
 
         }
+
+        private void EventWisedataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void EventWiseSearchcomboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            EventService eventService = new EventService();
+            EventWisedataGridView1.DataSource = eventService.GetNoteListByEvent(EventWiseSearchcomboBox1.Text);
+        }
     }
 }

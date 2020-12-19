@@ -47,5 +47,9 @@ namespace Digital_Dairy_Management_System.Business_Layer
         {
             return this.EventDataAccess.GetAllEventName();
         }
+        public List<Note> GetNoteListByEvent(string eventName)
+        {
+            return this.EventDataAccess.GetNotesByEvent(eventName);
+        }
     }
 }
