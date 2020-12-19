@@ -10,15 +10,15 @@ namespace Digital_Dairy_Management_System.Business_Layer
 {
     class EventService
     {
-        EventDataAccess eventDataAccess;
+        EventDataAccess EventDataAccess;
         public EventService()
         {
-            this.eventDataAccess = new EventDataAccess();
+            this.EventDataAccess = new EventDataAccess();
         }
 
         public List<Event> GetEventList()
         {
-            return this.eventDataAccess.GetAllEvent();
+            return this.EventDataAccess.GetAllEvent();
         }
     }
 }

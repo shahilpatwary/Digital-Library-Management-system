@@ -23,9 +23,9 @@ namespace Digital_Dairy_Management_System.Data_Access_Layer
             List<Event> events = new List<Event>();
             while(reader.Read())
             {
-                Event Event=new Event();
+                Event Event= new Event();
                 Event.EventId = (int)reader["EventId"];
-                Event.EventName = (int)reader["EventName"];
+                Event.EventName = reader["EventName"].ToString();
                 events.Add(Event);
             }
             return events;
@@ -37,7 +37,7 @@ namespace Digital_Dairy_Management_System.Data_Access_Layer
             reader.Read();
             Event Event = new Event();
             Event.EventId = (int)reader["EventId"];
-            Event.EventName = (int)reader["EventName"];
+            Event.EventName =reader["EventName"].ToString();
             
             return Event;
         }

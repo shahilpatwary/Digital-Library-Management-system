@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Digital_Dairy_Management_System.Presentation_Layer;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -16,7 +17,7 @@ namespace Digital_Dairy_Management_System
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new Event());
         }
     }
 }

@@ -9,6 +9,6 @@ namespace Digital_Dairy_Management_System.Entites
     class Event
     {
         public int EventId { get; set; }
-        public int EventName { get; set; }
+        public string EventName { get; set; }
     }
 }

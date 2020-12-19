@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Digital_Dairy_Management_System.Data_Access_Layer
 {
-    class DataAccess
+    class DataAccess:IDisposable
     {
         SqlConnection connection;
         SqlCommand command;
@@ -23,7 +23,7 @@ namespace Digital_Dairy_Management_System.Data_Access_Layer
         {
             this.command = new SqlCommand(sql, this.connection);
             SqlDataReader reader = this.command.ExecuteReader();
-            this.connection.Close();
+         //   this.connection.Close();
             return reader;
 
         }
@@ -36,5 +36,9 @@ namespace Digital_Dairy_Management_System.Data_Access_Layer
 
         }
 
+        public void Dispose()
+        {
+            this.connection.Close();
+        }
     }
 }
