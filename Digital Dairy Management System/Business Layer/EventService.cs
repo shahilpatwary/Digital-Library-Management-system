@@ -20,5 +20,27 @@ namespace Digital_Dairy_Management_System.Business_Layer
         {
             return this.EventDataAccess.GetAllEvent();
         }
+
+        public int AddNewEvent(string eventName)
+        {
+            Event @event = new Event()
+            {
+                EventName = eventName
+            };
+            return this.EventDataAccess.InsertEvent(@event);
+        }
+        public int UpdateNewEvent(int id,string eventName)
+        {
+            Event @event = new Event()
+            {
+                EventId = id,
+                EventName = eventName
+            };
+            return this.EventDataAccess.UpdateEvent(@event);
+        }
+        public int DeleteNewEvent(int id)
+        {
+            return this.EventDataAccess.DeleteEvent(id);
+        }
     }
 }

@@ -16,6 +16,8 @@ namespace Digital_Dairy_Management_System.Presentation_Layer
         public Event()
         {
             InitializeComponent();
+            AddEventbutton1.Click += this.RefreshGridView;
+            UpdateEventbutton1.Click += this.RefreshGridView;
         }
 
         private void Event_FormClosing(object sender, FormClosingEventArgs e)
@@ -32,6 +34,54 @@ namespace Digital_Dairy_Management_System.Presentation_Layer
         {
             EventService eventService = new EventService();
             LoadEventdataGridView1.DataSource = eventService.GetEventList();
+        }
+
+        private void RefreshGridView(object sender, EventArgs e)
+        {
+            EventService eventService = new EventService();
+            LoadEventdataGridView1.DataSource = eventService.GetEventList();
+        }
+        private void ClearInputFields()
+        {
+            AddEventtextBox1.Text =UpdateEventNametextBox1.Text= string.Empty;
+        }
+
+        private void AddEventbutton1_Click(object sender, EventArgs e)
+        {
+            EventService eventService = new EventService();
+            int result = eventService.AddNewEvent(AddEventtextBox1.Text);
+            if(result>0)
+            {
+                MessageBox.Show("New Event Added");
+                ClearInputFields();
+            }
+            else
+            {
+                MessageBox.Show("Server Error");
+            }
+
+        }
+        int id = 0;
+        private void LoadEventdataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            id =(int) LoadEventdataGridView1.Rows[e.RowIndex].Cells[0].Value;
+            UpdateEventNametextBox1.Text = LoadEventdataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
+        }
+
+        private void UpdateEventbutton1_Click(object sender, EventArgs e)
+        {
+            EventService eventService = new EventService();
+            int result = eventService.UpdateNewEvent(id,UpdateEventNametextBox1.Text);
+            if (result > 0)
+            {
+                MessageBox.Show("Event Update");
+                ClearInputFields();
+            }
+            else
+            {
+                MessageBox.Show("Update Server Error");
+            }
+
         }
     }
 }
