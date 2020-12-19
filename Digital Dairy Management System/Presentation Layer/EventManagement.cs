@@ -18,6 +18,7 @@ namespace Digital_Dairy_Management_System.Presentation_Layer
             InitializeComponent();
             AddEventbutton1.Click += this.RefreshGridView;
             UpdateEventbutton1.Click += this.RefreshGridView;
+            DeleteEventbutton1.Click += this.RefreshGridView;
         }
 
         private void Event_FormClosing(object sender, FormClosingEventArgs e)
@@ -43,7 +44,7 @@ namespace Digital_Dairy_Management_System.Presentation_Layer
         }
         private void ClearInputFields()
         {
-            AddEventtextBox1.Text =UpdateEventNametextBox1.Text= string.Empty;
+            AddEventtextBox1.Text =UpdateEventNametextBox1.Text=DeleteEventtextBox1.Text =string.Empty;
         }
 
         private void AddEventbutton1_Click(object sender, EventArgs e)
@@ -74,12 +75,28 @@ namespace Digital_Dairy_Management_System.Presentation_Layer
             int result = eventService.UpdateNewEvent(id,UpdateEventNametextBox1.Text);
             if (result > 0)
             {
-                MessageBox.Show("Event Update");
+                MessageBox.Show("Event Updated");
                 ClearInputFields();
             }
             else
             {
                 MessageBox.Show("Update Server Error");
+            }
+
+        }
+
+        private void DeleteEventbutton1_Click(object sender, EventArgs e)
+        {
+            EventService eventService = new EventService();
+            int result = eventService.DeleteNewEvent(Convert.ToInt32(DeleteEventtextBox1.Text));
+            if (result > 0)
+            {
+                MessageBox.Show("Event Deleted");
+                ClearInputFields();
+            }
+            else
+            {
+                MessageBox.Show("Delete Server Error");
             }
 
         }
