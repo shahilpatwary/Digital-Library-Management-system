@@ -1,0 +1,4 @@
+C:\Users\LENOVO\Desktop\C#\Final\Final_Asssignment\Digital Dairy Management System\obj\Debug\Digital Dairy Management System.csprojAssemblyReference.cache
+C:\Users\LENOVO\Desktop\C#\Final\Final_Asssignment\Digital Dairy Management System\obj\Debug\Digital_Dairy_Management_System.Properties.Resources.resources
+C:\Users\LENOVO\Desktop\C#\Final\Final_Asssignment\Digital Dairy Management System\obj\Debug\Digital Dairy Management System.csproj.GenerateResource.cache
+C:\Users\LENOVO\Desktop\C#\Final\Final_Asssignment\Digital Dairy Management System\obj\Debug\Digital Dairy Management System.csproj.CoreCompileInputs.cache
