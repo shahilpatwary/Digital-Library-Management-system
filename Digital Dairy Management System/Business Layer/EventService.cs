@@ -16,16 +16,17 @@ namespace Digital_Dairy_Management_System.Business_Layer
             this.EventDataAccess = new EventDataAccess();
         }
 
-        public List<Event> GetEventList()
+        public List<Event> GetEventList(int id)
         {
-            return this.EventDataAccess.GetAllEvent();
+            return this.EventDataAccess.GetAllEvent(id);
         }
 
-        public int AddNewEvent(string eventName)
+        public int AddNewEvent(string eventName,int id)
         {
             Event @event = new Event()
             {
-                EventName = eventName
+                EventName = eventName,
+                UserId = id
             };
             return this.EventDataAccess.InsertEvent(@event);
         }

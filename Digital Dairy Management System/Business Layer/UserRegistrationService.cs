@@ -14,7 +14,7 @@ namespace Digital_Dairy_Management_System.Business_Layer
         {
             this.userDataAccess = new UserRegistratinDataAccess();
         }
-        public bool LoginValidation(string userName, string password)
+        public int LoginValidation(string userName, string password)
         {
             return userDataAccess.LoginValidation(userName,password);
         }

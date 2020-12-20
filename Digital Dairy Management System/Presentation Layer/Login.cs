@@ -32,10 +32,10 @@ namespace Digital_Dairy_Management_System.Presentation_Layer
             else
             {
                 UserRegistrationService userRegistrationService = new UserRegistrationService();
-                bool result = userRegistrationService.LoginValidation(UserNametextBox2.Text, UserPasswordtextBox3.Text);
-                if (result)
+                int id = userRegistrationService.LoginValidation(UserNametextBox2.Text, UserPasswordtextBox3.Text);
+                if (id!=0)
                 {
-                    Event @event = new Event(this);
+                    Event @event = new Event(this,id);
                     @event.Show();
                     this.Hide();
                 }
@@ -56,7 +56,15 @@ namespace Digital_Dairy_Management_System.Presentation_Layer
 
         private void Login_Load(object sender, EventArgs e)
         {
+            UserPasswordtextBox3.Text = "";
+            UserNametextBox2.Text = "";
+        }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Registration r = new Registration();
+            r.Show();
+            this.Hide();
         }
     }
 }

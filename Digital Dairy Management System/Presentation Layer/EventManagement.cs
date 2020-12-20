@@ -14,9 +14,11 @@ namespace Digital_Dairy_Management_System.Presentation_Layer
     public partial class Event: Form
     {
         Login login;
-        public Event(Login login )
+        int uid;
+        public Event(Login login,int id)
         {
             this.login = login;
+            this.uid = id;
             InitializeComponent();
             AddEventbutton1.Click += this.RefreshGridView;
             UpdateEventbutton1.Click += this.RefreshGridView;
@@ -36,7 +38,7 @@ namespace Digital_Dairy_Management_System.Presentation_Layer
         private void Event_Load(object sender, EventArgs e)
         {
             EventService eventService = new EventService();
-            LoadEventdataGridView1.DataSource = eventService.GetEventList();
+            LoadEventdataGridView1.DataSource = eventService.GetEventList(uid);
             eventService = new EventService();
             EventWiseSearchcomboBox1.DataSource = eventService.GetEventNameList();
         }
@@ -44,7 +46,7 @@ namespace Digital_Dairy_Management_System.Presentation_Layer
         private void RefreshGridView(object sender, EventArgs e)
         {
             EventService eventService = new EventService();
-            LoadEventdataGridView1.DataSource = eventService.GetEventList();
+            LoadEventdataGridView1.DataSource = eventService.GetEventList(uid);
             eventService = new EventService();
             EventWiseSearchcomboBox1.DataSource = eventService.GetEventNameList();
         }
@@ -56,7 +58,7 @@ namespace Digital_Dairy_Management_System.Presentation_Layer
         private void AddEventbutton1_Click(object sender, EventArgs e)
         {
             EventService eventService = new EventService();
-            int result = eventService.AddNewEvent(AddEventtextBox1.Text);
+            int result = eventService.AddNewEvent(AddEventtextBox1.Text,uid);
             if(result>0)
             {
                 MessageBox.Show("New Event Added");
@@ -135,6 +137,7 @@ namespace Digital_Dairy_Management_System.Presentation_Layer
 
         private void Logoutbutton2_Click(object sender, EventArgs e)
         {
+            Login login = new Login();
             login.Show();
             this.Hide();
         }

@@ -19,19 +19,18 @@ namespace Digital_Dairy_Management_System.Business_Layer
         public string Date { get; set; }
         public string Importance { get; set; }
         public string Description { get; set; }
-        public int EventId { get; set; }
+        public int UserId { get; set; }
 
         public NoteService()
         {
             this.noteDataAccess = new NoteDataAccess();
         }
-        public List<Note> GetNoteList()
+        public List<Note> GetNoteList(int uid)
         {
-            return this.noteDataAccess.GetAllNotes();
+            return this.noteDataAccess.GetAllNotes(uid);
         }
-        public int AddNewNote(string noteName,string title,string date,string importance,string description,string EventName)
+        public int AddNewNote(string noteName,string title,string date,string importance,string description,string EventName,int userId)
         {
-            int EventId = this.noteDataAccess.GetEventId(EventName);
             Note note = new Note();
             {
                 NoteName = noteName;
@@ -39,7 +38,7 @@ namespace Digital_Dairy_Management_System.Business_Layer
                 Date = date;
                 Importance = importance;
                 Description = description;
-                EventId = EventId;
+                UserId = userId;
 
             }
             return this.noteDataAccess.AddNewNote(note);

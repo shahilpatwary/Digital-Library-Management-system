@@ -9,3 +9,4 @@ C:\Users\LENOVO\Desktop\C#\Final\Final_Asssignment\Digital Dairy Management Syst
 C:\Users\LENOVO\Desktop\C#\Final\Final_Asssignment\Digital Dairy Management System\obj\Debug\Digital Dairy Management System.exe
 C:\Users\LENOVO\Desktop\C#\Final\Final_Asssignment\Digital Dairy Management System\obj\Debug\Digital Dairy Management System.pdb
 C:\Users\LENOVO\Desktop\C#\Final\Final_Asssignment\Digital Dairy Management System\obj\Debug\Digital_Dairy_Management_System.Presentation_Layer.Login.resources
+C:\Users\LENOVO\Desktop\C#\Final\Final_Asssignment\Digital Dairy Management System\obj\Debug\Digital_Dairy_Management_System.Presentation_Layer.Registration.resources

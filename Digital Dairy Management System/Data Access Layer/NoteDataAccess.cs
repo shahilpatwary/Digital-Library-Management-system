@@ -16,9 +16,9 @@ namespace Digital_Dairy_Management_System.Data_Access_Layer
             this.dataAccess = new DataAccess();
         }
 
-        public List<Note> GetAllNotes()
+        public List<Note> GetAllNotes(int uid)
         {
-            string sql = "SELECT * FROM Ntes";
+            string sql = "SELECT * FROM Ntes where UserId ="+uid;
             SqlDataReader reader = dataAccess.GetData(sql);
             List<Note> notes = new List<Note>();
             while (reader.Read())
@@ -30,7 +30,7 @@ namespace Digital_Dairy_Management_System.Data_Access_Layer
                 note.Date = reader["Date"].ToString();
                 note.Importance = reader["Importance"].ToString();
                 note.Description = reader["Description"].ToString();
-                note.EventId = (int)reader["EventId"];
+                note.UserId = (int)reader["UserId"];
                 notes.Add(note);
             }
             return notes;
@@ -50,14 +50,14 @@ namespace Digital_Dairy_Management_System.Data_Access_Layer
             note.Date = reader["Date"].ToString();
             note.Importance = reader["Importance"].ToString();
             note.Description = reader["Description"].ToString();
-            note.EventId = (int)reader["EventId"];
+            note.UserId = (int)reader["EventId"];
               
             return note;
 
         }
         public int AddNewNote(Note note)
         {
-            string sql = "INSERT INTO Ntes(NoteName,Title,Date,Importance,Description,EventId) VALUES('" + note.NoteName + "'.'"+note.Title+"','"+note.Date+"','"+note.Importance+"','"+note.Description+"','"+note.EventId+"')";
+            string sql = "INSERT INTO Ntes(NoteName,Title,Date,Importance,Description,UserId) VALUES('" + note.NoteName + "'.'"+note.Title+"','"+note.Date+"','"+note.Importance+"','"+note.Description+"','"+note.UserId+"')";
             return this.dataAccess.ExecuteQuery(sql);
         }
         public int GetEventId(string eventName)
@@ -65,8 +65,8 @@ namespace Digital_Dairy_Management_System.Data_Access_Layer
             string eventIdSearchSql = "SELECT * FROM Events WHERE EventName='" + eventName + "'";
             SqlDataReader reader = this.dataAccess.GetData(eventIdSearchSql);
             reader.Read();
-            int EventId = (int)reader["EventId"];//error
-            return EventId;
+            int UserId = (int)reader["UserId"];//error
+            return UserId;
 
         }
 

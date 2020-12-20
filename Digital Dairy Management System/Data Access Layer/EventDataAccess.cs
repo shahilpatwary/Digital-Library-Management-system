@@ -16,9 +16,9 @@ namespace Digital_Dairy_Management_System.Data_Access_Layer
             this.dataAccess = new DataAccess();
         }
 
-        public List<Event> GetAllEvent()
+        public List<Event> GetAllEvent(int id)
         {
-            string sql = "SELECT * FROM Events";
+            string sql = "SELECT * FROM Events where UserId = "+id;
             SqlDataReader reader= this.dataAccess.GetData(sql);
             List<Event> events = new List<Event>();
             while(reader.Read())
@@ -38,13 +38,12 @@ namespace Digital_Dairy_Management_System.Data_Access_Layer
             Event Event = new Event();
             Event.EventId = (int)reader["EventId"];
             Event.EventName =reader["EventName"].ToString();
-            
             return Event;
         }
 
         public int InsertEvent(Event Event)
         {
-            string sql="INSERT INTO Events(EventName) VALUES('"+Event.EventName+"')";
+            string sql="INSERT INTO Events(EventName,UserId) VALUES('"+Event.EventName+"','"+Event.UserId+"')";
             int result = this.dataAccess.ExecuteQuery(sql);
             return result;
         }
@@ -56,7 +55,7 @@ namespace Digital_Dairy_Management_System.Data_Access_Layer
         }
         public int DeleteEvent(int id)
         {
-            string sql = "DELETE FROM Event WHERE EventId="+id;
+            string sql = "DELETE FROM Events WHERE EventId="+id;
             int result = this.dataAccess.ExecuteQuery(sql);
             return result;
         }
@@ -78,8 +77,8 @@ namespace Digital_Dairy_Management_System.Data_Access_Layer
             string eventIdSearchSql = "SELECT * FROM Events WHERE EventName='" + eventName + "'";
             SqlDataReader reader = this.dataAccess.GetData(eventIdSearchSql);
             reader.Read();
-            int EventId = (int)reader["EventId"];
-            string sql = "SELECT * FROM Ntes WHERE EventId=" + EventId;
+            int UserId = (int)reader["UserId"];
+            string sql = "SELECT * FROM Ntes WHERE UserId=" + UserId;
             dataAccess = new DataAccess();
             reader = dataAccess.GetData(sql);
             List<Note> notes = new List<Note>();
@@ -92,7 +91,7 @@ namespace Digital_Dairy_Management_System.Data_Access_Layer
                 note.Date = reader["Date"].ToString();
                 note.Importance = reader["Importance"].ToString();
                 note.Description = reader["Description"].ToString();
-                note.EventId = (int)reader["EventId"];
+                note.UserId = (int)reader["UserId"];
                 notes.Add(note);
             }
             return notes;

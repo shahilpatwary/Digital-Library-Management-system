@@ -15,15 +15,15 @@ namespace Digital_Dairy_Management_System.Data_Access_Layer
             this.dataAccess = new DataAccess();
         }
 
-        public bool LoginValidation(string userName,string password)
+        public int LoginValidation(string userName,string password)
         {
             string sql = "SELECT * FROM Users WHERE UserName='" + userName + "'and Password='" + password + "'";
             SqlDataReader reader = dataAccess.GetData(sql);
             if(reader.Read())
             {
-                return true;
+                return (int)reader["Id"];
             }
-            return false;
+            return 0;
         }
     }
 }

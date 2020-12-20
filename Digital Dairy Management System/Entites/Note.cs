@@ -14,6 +14,6 @@ namespace Digital_Dairy_Management_System.Entites
         public string Date { get; set; }
         public string Importance { get; set; }
         public string Description { get; set; }
-        public int EventId { get; set; }
+        public int UserId { get; set; }
     }
 }
