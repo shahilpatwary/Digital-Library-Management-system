@@ -36,6 +36,7 @@ namespace Digital_Dairy_Management_System.Data_Access_Layer
             return notes;
 
         }
+        
         public Note GetNote(int id)
         {
             string sql = "SELECT * FROM Ntes WHERE NoteId=" +id; 
@@ -59,8 +60,16 @@ namespace Digital_Dairy_Management_System.Data_Access_Layer
             string sql = "INSERT INTO Ntes(NoteName,Title,Date,Importance,Description,EventId) VALUES('" + note.NoteName + "'.'"+note.Title+"','"+note.Date+"','"+note.Importance+"','"+note.Description+"','"+note.EventId+"')";
             return this.dataAccess.ExecuteQuery(sql);
         }
+        public int GetEventId(string eventName)
+        {
+            string eventIdSearchSql = "SELECT * FROM Events WHERE EventName='" + eventName + "'";
+            SqlDataReader reader = this.dataAccess.GetData(eventIdSearchSql);
+            reader.Read();
+            int EventId = (int)reader["EventId"];//error
+            return EventId;
 
-        
+        }
+
 
     }
 }
