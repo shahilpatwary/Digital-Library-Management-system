@@ -35,9 +35,9 @@ namespace Digital_Dairy_Management_System.Presentation_Layer
                 bool result = userRegistrationService.LoginValidation(UserNametextBox2.Text, UserPasswordtextBox3.Text);
                 if (result)
                 {
-                    Event @event = new Event();
+                    Event @event = new Event(this);
                     @event.Show();
-                    @event.Hide();
+                    this.Hide();
                 }
                 else
                 {

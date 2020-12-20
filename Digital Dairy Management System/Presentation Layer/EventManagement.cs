@@ -13,8 +13,10 @@ namespace Digital_Dairy_Management_System.Presentation_Layer
 {
     public partial class Event: Form
     {
-        public Event()
+        Login login;
+        public Event(Login login )
         {
+            this.login = login;
             InitializeComponent();
             AddEventbutton1.Click += this.RefreshGridView;
             UpdateEventbutton1.Click += this.RefreshGridView;
@@ -129,6 +131,12 @@ namespace Digital_Dairy_Management_System.Presentation_Layer
         private void groupBox4_Enter(object sender, EventArgs e)
         {
 
+        }
+
+        private void Logoutbutton2_Click(object sender, EventArgs e)
+        {
+            login.Show();
+            this.Hide();
         }
     }
 }

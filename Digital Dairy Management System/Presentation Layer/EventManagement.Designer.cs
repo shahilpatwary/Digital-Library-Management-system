@@ -65,6 +65,7 @@
             this.NotecomboBox1 = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
             this.DiscriptiontextBox3 = new System.Windows.Forms.TextBox();
+            this.Logoutbutton2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.LoadEventdataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -471,6 +472,18 @@
             this.DiscriptiontextBox3.Size = new System.Drawing.Size(249, 29);
             this.DiscriptiontextBox3.TabIndex = 19;
             // 
+            // Logoutbutton2
+            // 
+            this.Logoutbutton2.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Logoutbutton2.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.Logoutbutton2.Location = new System.Drawing.Point(1189, 21);
+            this.Logoutbutton2.Name = "Logoutbutton2";
+            this.Logoutbutton2.Size = new System.Drawing.Size(115, 32);
+            this.Logoutbutton2.TabIndex = 3;
+            this.Logoutbutton2.Text = "Logout";
+            this.Logoutbutton2.UseVisualStyleBackColor = true;
+            this.Logoutbutton2.Click += new System.EventHandler(this.Logoutbutton2_Click);
+            // 
             // Event
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -478,6 +491,7 @@
             this.BackColor = System.Drawing.SystemColors.WindowFrame;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(1335, 639);
+            this.Controls.Add(this.Logoutbutton2);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.EventWisedataGridView1);
             this.Controls.Add(this.label5);
@@ -539,5 +553,6 @@
         private System.Windows.Forms.ComboBox NotecomboBox1;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.DateTimePicker NotedateTimePicker1;
+        private System.Windows.Forms.Button Logoutbutton2;
     }
 }
