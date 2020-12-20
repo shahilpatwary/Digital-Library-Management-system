@@ -48,5 +48,15 @@ namespace Digital_Dairy_Management_System.Presentation_Layer
 
             
         }
+
+        private void UserPasswordtextBox3_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Login_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace Digital_Dairy_Management_System.Presentation_Layer
 {
-    public partial class Event : Form
+    public partial class Event: Form
     {
         public Event()
         {
@@ -114,6 +114,21 @@ namespace Digital_Dairy_Management_System.Presentation_Layer
         {
             EventService eventService = new EventService();
             EventWisedataGridView1.DataSource = eventService.GetNoteListByEvent(EventWiseSearchcomboBox1.Text);
+        }
+
+        private void label8_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox3_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox4_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }

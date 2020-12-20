@@ -53,11 +53,24 @@
             this.label5 = new System.Windows.Forms.Label();
             this.EventWisedataGridView1 = new System.Windows.Forms.DataGridView();
             this.directoryEntry1 = new System.DirectoryServices.DirectoryEntry();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.NoteNametextBox1 = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.TitletextBox2 = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.NotedateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.label9 = new System.Windows.Forms.Label();
+            this.NotecomboBox1 = new System.Windows.Forms.ComboBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.DiscriptiontextBox3 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.LoadEventdataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.EventWisedataGridView1)).BeginInit();
+            this.groupBox4.SuspendLayout();
             this.SuspendLayout();
             // 
             // LoadEventdataGridView1
@@ -80,7 +93,7 @@
             dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.Desktop;
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ScrollBar;
             dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.Desktop;
             dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
@@ -321,13 +334,151 @@
             this.EventWisedataGridView1.TabIndex = 7;
             this.EventWisedataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.EventWisedataGridView1_CellContentClick);
             // 
+            // groupBox4
+            // 
+            this.groupBox4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("groupBox4.BackgroundImage")));
+            this.groupBox4.Controls.Add(this.DiscriptiontextBox3);
+            this.groupBox4.Controls.Add(this.label10);
+            this.groupBox4.Controls.Add(this.NotecomboBox1);
+            this.groupBox4.Controls.Add(this.label9);
+            this.groupBox4.Controls.Add(this.NotedateTimePicker1);
+            this.groupBox4.Controls.Add(this.label8);
+            this.groupBox4.Controls.Add(this.TitletextBox2);
+            this.groupBox4.Controls.Add(this.label7);
+            this.groupBox4.Controls.Add(this.button1);
+            this.groupBox4.Controls.Add(this.NoteNametextBox1);
+            this.groupBox4.Controls.Add(this.label6);
+            this.groupBox4.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox4.ForeColor = System.Drawing.SystemColors.Window;
+            this.groupBox4.Location = new System.Drawing.Point(630, 336);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(693, 290);
+            this.groupBox4.TabIndex = 8;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Event Update";
+            this.groupBox4.Enter += new System.EventHandler(this.groupBox4_Enter);
+            // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.button1.Location = new System.Drawing.Point(474, 199);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(151, 64);
+            this.button1.TabIndex = 2;
+            this.button1.Text = "Submit";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // NoteNametextBox1
+            // 
+            this.NoteNametextBox1.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NoteNametextBox1.Location = new System.Drawing.Point(124, 51);
+            this.NoteNametextBox1.Name = "NoteNametextBox1";
+            this.NoteNametextBox1.Size = new System.Drawing.Size(108, 29);
+            this.NoteNametextBox1.TabIndex = 1;
+            // 
+            // label6
+            // 
+            this.label6.BackColor = System.Drawing.SystemColors.Window;
+            this.label6.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.label6.Location = new System.Drawing.Point(6, 51);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(112, 29);
+            this.label6.TabIndex = 0;
+            this.label6.Text = "Note Name";
+            // 
+            // label7
+            // 
+            this.label7.BackColor = System.Drawing.SystemColors.Window;
+            this.label7.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.label7.Location = new System.Drawing.Point(6, 96);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(112, 29);
+            this.label7.TabIndex = 3;
+            this.label7.Text = "Title";
+            // 
+            // TitletextBox2
+            // 
+            this.TitletextBox2.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TitletextBox2.Location = new System.Drawing.Point(124, 96);
+            this.TitletextBox2.Name = "TitletextBox2";
+            this.TitletextBox2.Size = new System.Drawing.Size(114, 29);
+            this.TitletextBox2.TabIndex = 4;
+            // 
+            // label8
+            // 
+            this.label8.BackColor = System.Drawing.SystemColors.Window;
+            this.label8.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.label8.Location = new System.Drawing.Point(6, 139);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(112, 29);
+            this.label8.TabIndex = 5;
+            this.label8.Text = "Date";
+            this.label8.Click += new System.EventHandler(this.label8_Click);
+            // 
+            // NotedateTimePicker1
+            // 
+            this.NotedateTimePicker1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NotedateTimePicker1.Location = new System.Drawing.Point(124, 139);
+            this.NotedateTimePicker1.Name = "NotedateTimePicker1";
+            this.NotedateTimePicker1.Size = new System.Drawing.Size(217, 31);
+            this.NotedateTimePicker1.TabIndex = 12;
+            // 
+            // label9
+            // 
+            this.label9.BackColor = System.Drawing.SystemColors.Window;
+            this.label9.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.label9.Location = new System.Drawing.Point(6, 184);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(112, 29);
+            this.label9.TabIndex = 13;
+            this.label9.Text = "Importance";
+            // 
+            // NotecomboBox1
+            // 
+            this.NotecomboBox1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.NotecomboBox1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NotecomboBox1.FormattingEnabled = true;
+            this.NotecomboBox1.Items.AddRange(new object[] {
+            "High",
+            "Moderate,",
+            "Less important"});
+            this.NotecomboBox1.Location = new System.Drawing.Point(124, 184);
+            this.NotecomboBox1.Name = "NotecomboBox1";
+            this.NotecomboBox1.Size = new System.Drawing.Size(200, 40);
+            this.NotecomboBox1.TabIndex = 17;
+            // 
+            // label10
+            // 
+            this.label10.BackColor = System.Drawing.SystemColors.Window;
+            this.label10.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.label10.Location = new System.Drawing.Point(470, 51);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(112, 29);
+            this.label10.TabIndex = 18;
+            this.label10.Text = "Discription";
+            // 
+            // DiscriptiontextBox3
+            // 
+            this.DiscriptiontextBox3.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DiscriptiontextBox3.Location = new System.Drawing.Point(391, 92);
+            this.DiscriptiontextBox3.Name = "DiscriptiontextBox3";
+            this.DiscriptiontextBox3.Size = new System.Drawing.Size(249, 29);
+            this.DiscriptiontextBox3.TabIndex = 19;
+            // 
             // Event
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.WindowFrame;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(1335, 682);
+            this.ClientSize = new System.Drawing.Size(1335, 639);
+            this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.EventWisedataGridView1);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.EventWiseSearchcomboBox1);
@@ -350,6 +501,8 @@
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.EventWisedataGridView1)).EndInit();
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -374,5 +527,17 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.DataGridView EventWisedataGridView1;
         private System.DirectoryServices.DirectoryEntry directoryEntry1;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox TitletextBox2;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox NoteNametextBox1;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox DiscriptiontextBox3;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.ComboBox NotecomboBox1;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.DateTimePicker NotedateTimePicker1;
     }
 }
