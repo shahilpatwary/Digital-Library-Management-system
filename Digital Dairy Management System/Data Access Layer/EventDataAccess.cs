@@ -78,8 +78,8 @@ namespace Digital_Dairy_Management_System.Data_Access_Layer
             string eventIdSearchSql = "SELECT * FROM Events WHERE EventName='" + eventName + "'";
             SqlDataReader reader = this.dataAccess.GetData(eventIdSearchSql);
             reader.Read();
-            int eventId = (int)reader["EventId"];
-            string sql = "SELECT * FROM Ntes WHERE EvenrId=" + eventId;
+            int EventId = (int)reader["EventId"];
+            string sql = "SELECT * FROM Ntes WHERE EventId=" + EventId;
             dataAccess = new DataAccess();
             reader = dataAccess.GetData(sql);
             List<Note> notes = new List<Note>();
