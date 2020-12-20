@@ -17,7 +17,7 @@ namespace Digital_Dairy_Management_System
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Event());
+            Application.Run(new Login());
         }
     }
 }
