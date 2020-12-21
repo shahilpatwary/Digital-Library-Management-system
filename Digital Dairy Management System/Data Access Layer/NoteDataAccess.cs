@@ -30,6 +30,7 @@ namespace Digital_Dairy_Management_System.Data_Access_Layer
                 note.Date = reader["Date"].ToString();
                 note.Importance = reader["Importance"].ToString();
                 note.Description = reader["Description"].ToString();
+                note.EventId = (int)reader["EventId"];
                 note.UserId = (int)reader["UserId"];
                 notes.Add(note);
             }
@@ -50,6 +51,7 @@ namespace Digital_Dairy_Management_System.Data_Access_Layer
             note.Date = reader["Date"].ToString();
             note.Importance = reader["Importance"].ToString();
             note.Description = reader["Description"].ToString();
+            note.EventId = (int)reader["EventId"];
             note.UserId = (int)reader["EventId"];
               
             return note;
@@ -57,7 +59,7 @@ namespace Digital_Dairy_Management_System.Data_Access_Layer
         }
         public int AddNewNote(Note note)
         {
-            string sql = "INSERT INTO Ntes(NoteName,Title,Date,Importance,Description,UserId) VALUES('" + note.NoteName + "'.'"+note.Title+"','"+note.Date+"','"+note.Importance+"','"+note.Description+"','"+note.UserId+"')";
+            string sql = "INSERT INTO Ntes(NoteName,Title,Date,Importance,Description,UserId,EventId) VALUES('" + note.NoteName + "','"+note.Title+"','"+note.Date+"','"+note.Importance+"','"+note.Description+"','"+note.UserId+"','"+note.EventId+"')";
             return this.dataAccess.ExecuteQuery(sql);
         }
         public int GetEventId(string eventName)

@@ -26,6 +26,7 @@ namespace Digital_Dairy_Management_System.Data_Access_Layer
                 Event Event= new Event();
                 Event.EventId = (int)reader["EventId"];
                 Event.EventName = reader["EventName"].ToString();
+                Event.UserId = (int)reader["UserId"];
                 events.Add(Event);
             }
             return events;
@@ -60,9 +61,9 @@ namespace Digital_Dairy_Management_System.Data_Access_Layer
             return result;
         }
 
-        public List<string> GetAllEventName()
+        public List<string> GetAllEventName(int id)
         {
-            string sql = "SELECT * FROM Events";
+            string sql = "SELECT * FROM Events where UserId = " + id;
             SqlDataReader reader = this.dataAccess.GetData(sql);
             List<string> events = new List<string>();
             while (reader.Read())
@@ -72,13 +73,13 @@ namespace Digital_Dairy_Management_System.Data_Access_Layer
             return events;
         }
 
-        public List<Note> GetNotesByEvent(string eventName)
+        public List<Note> GetNotesByEvent(string eventName,int uid)
         {
-            string eventIdSearchSql = "SELECT * FROM Events WHERE EventName='" + eventName + "'";
+            string eventIdSearchSql = "SELECT * FROM Events WHERE EventName='" + eventName + "' and UserId = '"+uid+"'";
             SqlDataReader reader = this.dataAccess.GetData(eventIdSearchSql);
             reader.Read();
-            int UserId = (int)reader["UserId"];
-            string sql = "SELECT * FROM Ntes WHERE UserId=" + UserId;
+            int EventId = (int)reader["EventId"];
+            string sql = "SELECT * FROM Ntes WHERE  EventId=" + EventId;
             dataAccess = new DataAccess();
             reader = dataAccess.GetData(sql);
             List<Note> notes = new List<Note>();
@@ -91,6 +92,7 @@ namespace Digital_Dairy_Management_System.Data_Access_Layer
                 note.Date = reader["Date"].ToString();
                 note.Importance = reader["Importance"].ToString();
                 note.Description = reader["Description"].ToString();
+                note.EventId = (int)reader["EventId"];
                 note.UserId = (int)reader["UserId"];
                 notes.Add(note);
             }

@@ -57,5 +57,15 @@ namespace Digital_Dairy_Management_System.Presentation_Layer
             l.Show();
             this.Hide();
         }
+
+        private void Registration_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Registration_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

@@ -44,13 +44,13 @@ namespace Digital_Dairy_Management_System.Business_Layer
             return this.EventDataAccess.DeleteEvent(id);
         }
 
-        public List<string> GetEventNameList()
+        public List<string> GetEventNameList(int id)
         {
-            return this.EventDataAccess.GetAllEventName();
+            return this.EventDataAccess.GetAllEventName(id);
         }
-        public List<Note> GetNoteListByEvent(string eventName)
+        public List<Note> GetNoteListByEvent(string eventName,int uid)
         {
-            return this.EventDataAccess.GetNotesByEvent(eventName);
+            return this.EventDataAccess.GetNotesByEvent(eventName,uid);
         }
     }
 }

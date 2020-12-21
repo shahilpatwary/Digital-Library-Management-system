@@ -29,18 +29,18 @@ namespace Digital_Dairy_Management_System.Business_Layer
         {
             return this.noteDataAccess.GetAllNotes(uid);
         }
-        public int AddNewNote(string noteName,string title,string date,string importance,string description,string EventName,int userId)
+        public int AddNewNote(string noteName,string title,string date,string importance,string description,string EventName,int userId,int eventId)
         {
-            Note note = new Note();
+            Note note = new Note()
             {
-                NoteName = noteName;
-                Title = title;
-                Date = date;
-                Importance = importance;
-                Description = description;
-                UserId = userId;
-
-            }
+                NoteName = noteName,
+                Title = title,
+                Date = date,
+                Importance = importance,
+                Description = description,
+                EventId = eventId,
+                UserId = userId,
+            };
             return this.noteDataAccess.AddNewNote(note);
         }
 
